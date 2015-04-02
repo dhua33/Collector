@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Shrinking and Growing</title>
+    <script src="js/phaser.min.js"></script>
+    <script src="js/Boot.js"></script>
+    <script src="js/Preloader.js"></script>
+    <script src="js/MainMenu.js"></script>
+    <script src="js/Game.js"></script>
+
+<style>
+body
+{
+    color: #000000;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body bgcolor = "#A6E6FA">
+<script>
+(function() {
+		var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game');
+    game.state.add('Boot', boot);
+    game.state.add('Preloader', preloader);
+    game.state.add('MainMenu', mainmenu);
+    game.state.add('Game', main);
+    game.state.start('Boot');
+    })();
+</script>
+<div id="game"></div>
+<div id="readme">
+<h2>The Collector</h2>
+<ul>
+
+<li><strong>High Concept:</strong>
+Collect artifacts while changing size.
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+Platforming with a little big twist.
+</li>
+
+<li><strong>Genre:</strong>
+Platformer.
+</li>
+
+<li><strong>Game play:</strong>
+Use the left and right arrow keys to move, up to grow, down to shrink, and space to jump.
+</li>
+
+<li><strong>Prototype goal:</strong>
+Make a platformer with item collection and shrink/grow mechanics.
+</li>
+
+<li><strong>Features:</strong>
+Platforming with a shrink/grow mechanic.
+</li>
+
+<li><strong>Setting/Premise:</strong>
+You have been subject to a medical experiment allowing you to shrink and grow at will to a predetermined size. You must collect round artifacts scattered throughout the map.
+</li>
+
+<li><strong>Story:</strong>
+None.
+</li>
+
+<li><strong>Target Audience:</strong>
+Everyone 10 and up who has interest in platformers, collecting stuff, shrinking, and growing.
+</li>
+
+<li><strong>Play time:</strong>
+1-5 mins.
+</li>
+
+<li><strong>Strategies:</strong>
+Shrink and grow when you need to, and don't forget your jump height is also affected.
+</li>
+
+<li><strong>Prototype Assets:</strong>
+Tilemap: Buch http://opengameart.org/content/the-field-of-the-floating-islands 
+Sprites by Antifarea: 
+http://opengameart.org/content/antifareas-rpg-sprite-set-1-enlarged-w-transparent-background-fixed 
+Beep: 
+https://www.freesound.org/people/pan14/sounds/263133/ 
+Select: 
+https://www.freesound.org/people/killkhan/sounds/150222/ 
+Jump: 
+http://opengameart.org/content/jump-sound-effect-yo-frankie 
+Music: 
+"Late Night Sneakin" (HappyBivouac / http://ocremix.org) 
+
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+
+</li>
+
+</ul>
+</div>
+</body>
+</html>
