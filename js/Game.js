@@ -31,8 +31,10 @@ main.prototype = {
 				this.camera.follow(this.p);
 				this.small = false;
 				this.jumpbig = -600;
-				this.jumpsmall = -300;
+				this.jumpsmall = -165;
+				this.jumpval = 240;
 				this.jump = this.jumpbig;
+				this.p.speed = 320;
 				
 				// audio
 				this.music = this.add.audio('music', 0.4, true);
@@ -67,7 +69,6 @@ main.prototype = {
 				this.p.body.velocity.x = 0;
 				
 				// movement
-				this.p.speed = 320;
 				if(this.keys.left.isDown) {
 						this.p.animations.play('left');
 						this.p.body.velocity.x = -this.p.speed;
@@ -83,15 +84,19 @@ main.prototype = {
 				if(this.keys.down.isDown) {
 						if(!this.small) {
 								this.p.scale.set(0.5, 0.5);
+								this.p.speed = 160;
 								this.jump = this.jumpsmall;
 								this.small = true;
+								this.jumpval = 165;
 								this.sound.select.play();
 						}
 				} else if(this.keys.up.isDown) {
 						if(this.small && !this.invis) {
 								this.p.scale.set(1, 1);
+								this.p.speed = 320;
 								this.jump = this.jumpbig;
 								this.small = false;
+								this.jumpval = 240;
 								this.sound.select.play();
 						}
 				}
@@ -103,7 +108,7 @@ main.prototype = {
 				if(this.p.body.velocity.y < this.jump) {
 						this.jumpBool = false;
 				} else if(this.jumpBool && this.p.body.velocity.y > this.jump){
-						this.p.body.velocity.y -= 240;
+						this.p.body.velocity.y -= this.jumpval;
 				}
 		}
 }
